@@ -14,12 +14,17 @@ class App extends Component {
         {
           date: '2019-01-16',
           time: '14:00',
-          title: 'Coaching'
+          title: 'coaching'
+        },
+        {
+          date: '2019-01-18',
+          time: '20:00',
+          title: 'get schwifty'
         },
         {
           date: '2019-01-18',
           time: '21:00',
-          title: 'Party Hard'
+          title: 'blips and chitz'
         },
       ]
     };

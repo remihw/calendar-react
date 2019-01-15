@@ -15,7 +15,7 @@ const HourReferenceList = (props) => {
   }
 
   const hourList = hours.map(hour => {
-    return <li key={hour}>{hour}</li>
+    return <li key={hour}>{hour}</li>;
   });
 
 

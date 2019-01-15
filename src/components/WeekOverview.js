@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { format, startOfWeek, endOfWeek, eachDay, isSameDay } from 'date-fns';
 
 import HourReferenceList from './HourReferenceList';
-import DayOverview from './DayOverview';
+import DaysOverview from './DaysOverview';
 
 const WeekOverview = (props) => {
 
@@ -10,19 +10,21 @@ const WeekOverview = (props) => {
         lastDayOfWeek = endOfWeek(new Date(), { weekStartsOn: 1 }),
         eachDayOfWeek = eachDay(firstDayOfWeek, lastDayOfWeek);
 
-  const dayOverview = eachDayOfWeek.map(day => {
+  const daysOverview = eachDayOfWeek.map(day => {
 
     const events = props.events.filter(event => {
       return isSameDay(event.date, format(day, 'YYYY-MM-DD'));
     });
 
     return (
-      <DayOverview
+
+      <DaysOverview
         key={format(day, 'DDMMYY')}
         events={events}
         date={format(day, 'DD')}
         dayOfWeek={format(day, 'ddd').toUpperCase()}
       />
+
     );
 
   });
@@ -31,7 +33,7 @@ const WeekOverview = (props) => {
 
     <div className='week-overview'>
       <HourReferenceList />
-      {dayOverview}
+      {daysOverview}
     </div>
 
   );
