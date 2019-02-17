@@ -12,17 +12,17 @@ class App extends Component {
     this.state = {
       events: [
         {
-          date: '2019-01-16',
+          date: '2019-02-16',
           time: '14:00',
           title: 'coaching'
         },
         {
-          date: '2019-01-18',
+          date: '2019-02-18',
           time: '20:00',
           title: 'get schwifty'
         },
         {
-          date: '2019-01-18',
+          date: '2019-02-18',
           time: '21:00',
           title: 'blips and chitz'
         },

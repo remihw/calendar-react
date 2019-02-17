@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { format, startOfWeek, endOfWeek, eachDay, isSameDay } from 'date-fns';
+import { format, startOfWeek, endOfWeek, eachDay, isSameDay, getMonth} from 'date-fns';
 
 import HourReferenceList from './HourReferenceList';
 import DaysOverview from './DaysOverview';
@@ -8,7 +8,8 @@ const WeekOverview = (props) => {
 
   const firstDayOfWeek = startOfWeek(new Date(), { weekStartsOn: 1 }),
         lastDayOfWeek = endOfWeek(new Date(), { weekStartsOn: 1 }),
-        eachDayOfWeek = eachDay(firstDayOfWeek, lastDayOfWeek);
+        eachDayOfWeek = eachDay(firstDayOfWeek, lastDayOfWeek),
+        currentMonth = format(getMonth(new Date()), 'MMMM').toUpperCase();
 
   const daysOverview = eachDayOfWeek.map(day => {
 
@@ -31,9 +32,17 @@ const WeekOverview = (props) => {
 
   return (
 
-    <div className='week-overview'>
-      <HourReferenceList />
-      {daysOverview}
+    <div>
+
+      <div className='current-month'>
+        {currentMonth}
+      </div>
+
+      <div className='week-overview'>
+        <HourReferenceList />
+        {daysOverview}
+      </div>
+
     </div>
 
   );

@@ -8,10 +8,18 @@ body {
   box-sizing: border-box;
 }
 
+.current-month {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 /* WEEK STYLING */
 
 .week-overview {
   display: flex;
+  max-height: 696px;
+  overflow: scroll;
 }
 
 .week-overview .hour-reference {
